@@ -1,0 +1,7 @@
+1. https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
+2. Implement infinite scroll using under-the-hood pagination
+    a. Add an invisible element at the bottom of the page and make the target of the intersection observer
+    b. Maintain a state for page number
+    c. When the observer target is fully in view it indicates that the user has reached the bottom of the page
+    d. At this point increment the page count by 1.
+    e. When the page count is increased, fetch the next batch of data
