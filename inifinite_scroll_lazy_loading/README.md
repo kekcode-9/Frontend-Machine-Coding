@@ -23,23 +23,23 @@ Our plan is to:
 
 Data structure for posts in our server: <br/>
 { <br/>
-&nbsp;0: { <br/>
+&nbsp;&nbsp;0: { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1: { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2: { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}, <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;... <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;9: { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;} <br/>
+&nbsp;&nbsp;}, <br/>
 &nbsp;&nbsp;1: { <br/>
-&nbsp;&nbsp;&nbsp;...post content <br/>
-&nbsp;&nbsp;}, <br/>
-&nbsp;&nbsp;2: { <br/>
-&nbsp;&nbsp;&nbsp;...post content <br/>
-&nbsp;&nbsp;}, <br/>
-&nbsp;&nbsp;... <br/>
-&nbsp;&nbsp;9: { <br/>
-&nbsp;&nbsp;&nbsp;...post content <br/>
-&nbsp;&nbsp;} <br/>
-&nbsp;}, <br/>
-&nbsp;1: { <br/>
-&nbsp;&nbsp;10: { <br/>
-&nbsp;&nbsp;&nbsp;...post content <br/>
-&nbsp;&nbsp;}, ... <br/>
-&nbsp;}, ... <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;10: { <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}, ... <br/>
+&nbsp;&nbsp;&nbsp;}, ... <br/>
 } <br/>
 
 Notice that we do not start over the post keys from 0 for each page, instead we maintain the actual no. of the posts among the enitre list of posts. This is because we will not be showing just one page worth of posts ( 10 posts ) in the UI at a time. Instead, as user scrolls down, the no. of posts shown will keep growing. If each page stores its posts using keys from 0 to 9 then when we add a new set of posts to our react state for posts, those new post keys, being the same ( 0 to 9 ) as the old ones, would overwrite the old posts and we will inadvertently end up removing the older posts from our UI.
