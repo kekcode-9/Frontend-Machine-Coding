@@ -22,24 +22,24 @@ Our plan is to:
 4. We store this paginated data inside a variable called **allPosts** of type **AllPostsType** ( find it in types.d.ts ), from where we serve the posts from each page to client based on the page number passed in the search parameter.
 
 Data structure for posts in our server: <br/>
-{
-    0: {
-        1: {
-            ...post content
-        },
-        2: {
-            ...post content
-        },
-        ...
-        9: {
-            ...post content
-        }
-    },
-    1: {
-        10: {
-            ...post content
-        }, ...
-    }, ...
+{ <br/>
+    0: { <br/>
+        1: { <br/>
+            ...post content <br/>
+        }, <br/>
+        2: { <br/>
+            ...post content <br/>
+        }, <br/>
+        ... <br/>
+        9: { <br/>
+            ...post content <br/>
+        } <br/>
+    }, <br/>
+    1: { <br/>
+        10: { <br/>
+            ...post content <br/>
+        }, ... <br/>
+    }, ... <br/>
 } <br/>
 
 Notice that we do not start over the post keys from 0 for each page, instead we maintain the actual no. of the posts among the enitre list of posts. This is because we will not be showing just one page worth of posts ( 10 posts ) in the UI at a time. Instead, as user scrolls down, the no. of posts shown will keep growing. If each page stores its posts using keys from 0 to 9 then when we add a new set of posts to our react state for posts, those new post keys, being the same ( 0 to 9 ) as the old ones, would overwrite the old posts and we will inadvertently end up removing the older posts from our UI.
