@@ -23,7 +23,7 @@ Our plan is to:
 
 Data structure for posts in our server: <br/>
 { <br/>
-&nbsp;&nbsp;0: { <br/>
+&nbsp;&nbsp;0: { // page 0 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;1: { <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}, <br/>
@@ -35,7 +35,7 @@ Data structure for posts in our server: <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
 &nbsp;&nbsp;}, <br/>
-&nbsp;&nbsp;1: { <br/>
+&nbsp;&nbsp;1: { // page 1 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;10: { <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...post content <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;}, ... <br/>
