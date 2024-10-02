@@ -1,9 +1,6 @@
 "use client";
 import React, {
   useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
   useState,
 } from "react";
 import { useInView } from "react-intersection-observer";
@@ -13,9 +10,9 @@ export default function Posts() {
   const [posts, updatePosts] = useState<AllPostsType>();
   const [page, updatePage] = useState<number>(-1);
 
-  const { ref, inView, entry } = useInView({
+  const { ref } = useInView({
     threshold: 1,
-    onChange: (inView, entry) => {
+    onChange: (inView) => {
       if (inView) {
         fetchNextPage();
       }
