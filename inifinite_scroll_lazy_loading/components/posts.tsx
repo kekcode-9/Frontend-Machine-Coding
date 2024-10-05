@@ -32,9 +32,6 @@ export default function Posts() {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log("page is: ", page);
-        console.log("response is: ", res);
-        console.log("posts is: ", posts);
         updatePosts({
           ...posts,
           ...res,
